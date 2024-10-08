@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .tamañoDeImg {
+            height: 200px;
+            width: 500px;
+            object-fit: cover;
+        }
+
+        .tamañoDeImgIndividual {
+            height: 300px;
+            width: 400px;
+            object-fit: cover;
+        }
+
+        .contenedorDeImagen {
+            height: 380px;
+            width: 400px;
+        }
+
+        .scroll {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container p-3">
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar justify-content-between"> <!-- logo -->
+                    <a class="navbar-brand" href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                        Instagram
+                    </a>
+                    <div class="d-flex align-items-center">
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">Create a new post</button> <!-- boton Create a new post  -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Create a new post</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="message-text" class="col-form-label">Caption:</label>
+                                                <textarea class="form-control" id="message-text"></textarea>
+                                            </div>
+                                            <i class="fa-solid fa-camera fs-4 me-2"></i>
+                                            <i class="fa-solid fa-location-dot fs-4"></i>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-success">Publish</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown"> <!-- boton menu desplegable  -->
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-gear"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Accesibility</a></li>
+                                <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                                        href="#">Log Out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- botones de modo de visualización de imagenes  -->
+                <div class="d-flex justify-content-center">
+                    <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-home" type="button" role="tab" aria-controls=pills-home
+                                aria-selected="true"><i class="fa-solid fa-table-cells text-light"></i></button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-profile" type="button" role="tab" aria-controls=pills-profile
+                                aria-selected="false"><i class="fa-solid fa-square text-light"></i></button>
+                        </li>
+                    </ul>
+                </div>
+                <div id="pills-tabContent" class="tab-content">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                        aria-labelledby="pills-home-tab" tabindex="0">
+                        <div class="row">
+                            <div class="col-4"> <img src="imagenes/alejandro-pinero-amerio-DGKB22yKqoo-unsplash.jpg"
+                                    class="img-fluid img-thumbnail tamañoDeImg" alt="image1"> </div>
+                            <div class="col-4"> <img src="imagenes/ana-hitomi-urano-ODWU5DrXCuw-unsplash.jpg"
+                                    class="img-fluid img-thumbnail tamañoDeImg" alt="image2"> </div>
+                            <div class="col-4"> <img src="imagenes/fabio-sasso-WIZbfhc3xfY-unsplash.jpg"
+                                    class="img-fluid img-thumbnail tamañoDeImg" alt="image3"> </div>
+                            <div class="col-4"> <img src="imagenes/isabel-pineiro-WDrZfFv4hK0-unsplash.jpg"
+                                    class="img-fluid img-thumbnail tamañoDeImg" alt="image4"> </div>
+                            <div class="col-4"> <img src="imagenes/linda-cunningham-37NUX6XodfI-unsplash.jpg"
+                                    class="img-fluid img-thumbnail tamañoDeImg" alt="image5"> </div>
+                            <div class="col-4"> <img src="imagenes/mor-shani-S9rqJUkvf0U-unsplash.jpg"
+                                    class="img-fluid img-thumbnail tamañoDeImg" alt="image6"> </div>
+                            <div class="col-4"> <img src="imagenes/patrick-chen-5XoqF0Gh27o-unsplash.jpg"
+                                    class="img-fluid img-thumbnail tamañoDeImg" alt="image7"> </div>
+                            <div class="col-4"> <img src="imagenes/phil-wall-NfeLpFiC4BU-unsplash.jpg"
+                                    class="img-fluid img-thumbnail tamañoDeImg" alt="image8"> </div>
+                            <div class="col-4"> <img src="imagenes/valeriano-g-ETHZhvK73Zo-unsplash.jpg"
+                                    class="img-fluid img-thumbnail tamañoDeImg" alt="image9"> </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- imagenes individuales -->
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
+                    tabindex="0">
+
+                    <div class=" border rounded p-1 contenedorDeImagen mx-auto my-3">
+                        <h6 class="d-flex justify-content-center">Galicia</h6>
+                        <img src="imagenes/alejandro-pinero-amerio-DGKB22yKqoo-unsplash.jpg"
+                            class="rounded mx-auto d-block img-fluid img-thumbnail tamañoDeImgIndividual" alt="imagen1">
+                        <h6 class="d-flex justify-content-center">Galicia y sus mares ofrecen los mejores mariscos
+                            frescos del Atlántico.</h6>
+                    </div>
+
+                    <div class=" border rounded p-1 contenedorDeImagen mx-auto my-3">
+                        <h6 class="d-flex justify-content-center">Galicia</h6>
+                        <img src="imagenes/ana-hitomi-urano-ODWU5DrXCuw-unsplash.jpg"
+                            class="rounded mx-auto d-block img-fluid img-thumbnail tamañoDeImgIndividual" alt="imagen1">
+                        <h6 class="d-flex justify-content-center">Las calles de Galicia guardan el encanto de su
+                            historia y tradición.</h6>
+                    </div>
+
+                    <div class=" border rounded p-1 contenedorDeImagen mx-auto my-3">
+                        <h6 class="d-flex justify-content-center">Galicia</h6>
+                        <img src="imagenes/fabio-sasso-WIZbfhc3xfY-unsplash.jpg"
+                            class="rounded mx-auto d-block img-fluid img-thumbnail tamañoDeImgIndividual" alt="imagen1">
+                        <h6 class="d-flex justify-content-center">Al anochecer, Galicia se llena de misterio y magia.
+                        </h6>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
